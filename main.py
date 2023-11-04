@@ -15,7 +15,8 @@ while opcao != 0:
     # Tela de Cadastro de Filmes
     if opcao == 1:
         interface.mostraCadastroFilmes()
+        opcao = ""
 
     # Tela de Lista de filmes
     if opcao == 2:
-        pass    
+        interface.mostraListaFilmes() 
