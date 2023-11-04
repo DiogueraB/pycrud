@@ -14,14 +14,20 @@ class BD:
         self.criarTabelaFilmes()
 
     def criarTabelaFilmes(self):
+
         self.cursor.execute("""
             CREATE TABLE IF NOT EXISTS filmes(id INTEGER PRIMARY KEY AUTOINCREMENT,
             titulo TEXT NOT NULL, 
             genero TEXT NOT NULL, 
             duracao TEXT NULL,
-            diretor TEXT NULL
+            diretor TEXT NULL,
             estudio TEXT NULL,
             classificacao TEXT NULL,
             ano DATE NULL
             )
         """)
+
+    def inserir(self, tabela, valores):
+        sql = f"INSERT INTO {tabela}"
+
+        for chave, valor in valores
