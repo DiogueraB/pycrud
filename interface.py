@@ -74,10 +74,26 @@ class Interface:
             "estudio": estudio,
             "classificacao": classificacao,
             "ano": ano
-
         }
         self.banco.inserir('filmes',valores)
     
+    def mostraListaFilmes(self):
+        self.logotipo()
+
+        print("Veja abaixo a lista de filmes cadastrados.")
+        print()
+
+        filmes = self.banco.buscaDados('filmes')
+
+        for filme in filmes:
+            #print(filme)
+            id, titulo, genero, duracao, diretor, estudio, classificacao, ano = filme
+
+            print(f"Filme {id} - {titulo} | {genero}")
+            print()
+
+        input("Aperte Enter para continuar...") 
+
     # Solicita um valor do usuário e valida ele
     # Return valordigitado
     def solicitaValor(self, legenda, tipo = 'texto', permiteNulo = False):
@@ -100,5 +116,4 @@ class Interface:
             
         return valor
     
-    def mostraListaFilmes(self):
-        pass
+
